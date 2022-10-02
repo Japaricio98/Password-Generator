@@ -25,15 +25,23 @@ function generatePassword() {
 
   // Password length requirement
   var getPasswordLength = window.prompt("How many characters would you like your password to contain?");
-  if (getPasswordLength < 8) {
-    window.alert("Password length must be at least 8 characters.");
+
+  while ((getPasswordLength == false) | (getPasswordLength > 128) | (getPasswordLength < 8)) {
+
+    if (getPasswordLength < 8) {
+      window.alert("Password length must be at least 8 characters.");
+    }
+    if (getPasswordLength > 128) {
+      window.alert("Password length cannot exceed 128 characters.");
+    }
+    if (getPasswordLength == null) {
+      window.alert("Password length must be at least 8 characters.");
+    }
+
+    var getPasswordLength = window.prompt("How many characters would you like your password to contain?");
+
   }
-  if (getPasswordLength > 128) {
-    window.alert("Password length cannot exceed 128 characters.");
-  }
-  if (getPasswordLength == null) {
-    window.alert("Password length must be at least 8 characters.");
-  }
+
 
   // Character requirements
   var includeSpecialChars = window.confirm("Click OK to confirm including special characters.");
@@ -44,11 +52,35 @@ function generatePassword() {
     window.alert("Must select at least one character type.");
   }
 
+  // Character sets
+  const specialChars = " !\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~";
+  const numericalChars = '0123456789';
+  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  
   
 
+  
 
+  // Creating password
+  var passwordOptions = "";
+  var randomPassword = "";
+  if (includeSpecialChars) {
+    passwordOptions += specialChars;
+  };
+  if (includeNumericChars) {
+    passwordOptions += numericalChars;
+  };
+  if (includeLowerChars) {
+    passwordOptions += lowercaseChars;
+  };
+  if (includeUpperChars) {
+    passwordOptions += uppercaseChars;
+  };
 
-
+  for (i = 0; i < getPasswordLength; i++) {
+    randomPassword += passwordOptions.charAt(Math.floor(Math.random() * passwordOptions.length));
+  };
 
 
   
@@ -56,6 +88,8 @@ function generatePassword() {
   window.alert(
     "getPasswordLength:\t" + getPasswordLength + "\nincludeSpecialChars:\t" + includeSpecialChars + "\nincludeNumericChars:\t" + includeNumericChars + "\nincludeLowerChars:\t" + includeLowerChars + "\nincludeUpperChars:\t" + includeUpperChars
   )
+
+  return randomPassword;
 
 }
 
