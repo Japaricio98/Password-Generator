@@ -34,7 +34,7 @@ The finished product can be found here: [https://japaricio98.github.io/Password-
 Screenshots of the finished product appear below.
 
 ![pg-index](Develop/images/pg-index.png)
-![pg-length-success](Develop/images/pg-length-sucess.png)
+![pg-length-success](Develop/images/pg-length-success.png)
 ![pg-special](Develop/images/pg-special.png)
 ![pg-numeric](Develop/images/pg-numeric.png)
 ![pg-lowercase](Develop/images/pg-lowercase.png)
