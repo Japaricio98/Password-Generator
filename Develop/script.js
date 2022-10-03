@@ -1,27 +1,9 @@
-// Assignment code here
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 
 // Generate password
 function generatePassword() {
-
-  /*
-  // Prompt user for password requirements
-  var getPasswordLength = window.prompt("How many characters would you like your password to contain?")
-  var includeSpecialChars = window.confirm("Click OK to confirm including special characters.")
-  var includeNumericChars = window.confirm("Click Ok to confirm including numeric characters.")
-  var includeLowerChars = window.confirm("Click Ok to confirm including lowercase characters.")
-  var includeUpperChars = window.confirm("Click Ok to confirm including uppercase characters.")
-
-  /*
-  // Handle errors for password requirements
-  var minPasswordLength = window.alert("Password length must be at least 8 characters.")
-  var maxPasswordLength = window.alert("Password length cannot exceed 128 characters.")
-  var noCharTypes = window.alert("Must select at least one character type.")
-  */
 
   // Password length requirement
   var getPasswordLength = window.prompt("How many characters would you like your password to contain?");
@@ -52,16 +34,14 @@ function generatePassword() {
     window.alert("Must select at least one character type.");
   }
 
+
   // Character sets
-  const specialChars = " !\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~";
+  const specialChars = "!\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~";  // does not include a space character
   const numericalChars = '0123456789';
   const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
   const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   
   
-
-  
-
   // Creating password
   var passwordOptions = "";
   var randomPassword = "";
@@ -83,14 +63,18 @@ function generatePassword() {
   };
 
 
-  
-  // Troubleshooting
+  // Display selected options
   window.alert(
-    "getPasswordLength:\t" + getPasswordLength + "\nincludeSpecialChars:\t" + includeSpecialChars + "\nincludeNumericChars:\t" + includeNumericChars + "\nincludeLowerChars:\t" + includeLowerChars + "\nincludeUpperChars:\t" + includeUpperChars
+    "Here is a summary of your password requirements:\n\n" + 
+    "Password length:  " + getPasswordLength + "\n" +
+    "Include special characters?:  " + includeSpecialChars + "\n" + 
+    "Include numeric characters?:  " + includeNumericChars + "\n" + 
+    "Include lowercase characters?:  " + includeLowerChars + "\n" + 
+    "Include uppercase characters?:  " + includeUpperChars
   )
 
-  return randomPassword;
 
+  return randomPassword;
 }
 
 // Write password to the #password input
