@@ -29,6 +29,10 @@ N/A
 
 The password generator HTML can be found at ```./Develop/index.html``` with an accompanying CSS file at ```./Develop/style.css``` and a JS file at ```.Develop/script.js```.
 
+The finished product can be found here: [https://japaricio98.github.io/Password-Generator/Develop/index.html](https://japaricio98.github.io/Password-Generator/Develop/index.html)
+
+Screenshots of the finished product appear below.
+
 ## Credits
 
 Juan Aparicio
