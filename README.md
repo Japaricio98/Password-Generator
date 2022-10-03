@@ -1,6 +1,5 @@
 # Password-Generator
 
-
 ## Description
 
 This password generator was created to randomly generate a password for an employee who handles sensitive data. This tool allows the user to select certain criteria for building a strong password which will provide greater security. 
